@@ -1,0 +1,25 @@
+.light {
+  position: absolute;
+  width: 320px;
+  height: 62vh;
+  top: 0;
+  background: #ffe762;
+  background: linear-gradient(to bottom, #ffe762 0%,rgba(255,231,98,0) 100%);
+  clip-path: polygon(0% 87.5%, 40% 0%, 60% 0%, 100% 87.5%);
+  opacity: .5;
+
+  &--active {
+    animation-name: light-active;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes light-active {
+  to {
+    clip-path: polygon(0% 87.5%, 10% 0%, 90% 0%, 100% 87.5%);
+  }
+}

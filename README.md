@@ -1,1 +1,1 @@
-# speed_math_game
+# Speed Math Game

@@ -1,0 +1,38 @@
+.spotlight {
+  position: absolute;
+  height: 320px;
+  top: 30px;
+  width: 320px;
+  margin-left: -20px;
+  border-radius: 300px;
+  transform: rotateX(80deg) rotateZ(-30deg);
+  transform-style: preserve-3d;
+  background-color: #e6d876;
+  box-shadow: 0 0 2.5px 2.5px #e6d876;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+
+  &::after {
+    content: "ξ";
+    color: #e5c369;
+    font-size: 12em;
+    line-height: 1;
+  }
+
+  &--active {
+    animation-name: spotlight-active;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes spotlight-active {
+  to {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(-30deg);
+  }
+}

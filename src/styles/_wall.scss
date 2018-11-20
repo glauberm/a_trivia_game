@@ -1,0 +1,28 @@
+.wall {
+  text-align: center;
+
+  &__title {
+    font-weight: normal;
+    color: transparent;
+    background-color: darken(#4f6781, 2.5%);
+    text-shadow: 0 2px 1px rgba(255, 255, 255, .25);
+    background-clip: text;
+    margin-bottom: 0.235em;
+    transform-style: preserve-3d;
+  }
+
+  &--active {
+    animation-name: wall-active;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes wall-active {
+  to {
+    transform: translateY(-75px) rotateX(35deg) scale(1.2);
+  }
+}

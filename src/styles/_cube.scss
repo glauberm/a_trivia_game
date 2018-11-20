@@ -1,0 +1,104 @@
+.cube {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transform: translateZ(25px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  &__inner {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+    animation-name: cube-rotate;
+    animation-duration: 4.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__core {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+
+    &--selected {
+      animation-name: cube-selected;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-delay: 0.8s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &__face {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: $cube-gray400;
+    border: 5px solid $cube-gray400;
+    font-size: 1.1em;
+    color: $cube-black;
+    text-shadow: 0 1px 1px $cube-gray200;
+    box-shadow: 0 0 0 2.5px $cube-gray500 inset;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--top {
+      transform: rotateY(0deg) translateZ(25px);
+      background-color: $cube-gray200;
+      border: 5px solid $cube-gray200;
+      color: $cube-gray700;
+      text-shadow: none;
+      box-shadow: 0 0 0 2.5px $cube-gray400 inset;
+    }
+
+    &--bottom,
+    &--shadow {
+      transform: rotateY(180deg) translateZ(25px);
+      background-color: $cube-gray700;
+      border: 0 none;
+      text-shadow: none;
+    }
+
+    &--shadow {
+      opacity: .25;
+      box-shadow: 0 0 2.5px 2.5px $cube-gray700;
+    }
+
+    &--front { transform: rotateX(-90deg) translateZ(25px); }
+    &--back { transform: rotateX(90deg) rotateZ(-180deg) translateZ(25px); }
+    &--left { transform: rotateY(-90deg) rotateZ(90deg) translateZ(25px); }
+    &--right { transform: rotateY(90deg) rotateZ(-90deg) translateZ(25px); }
+  }
+
+  &__core--selected &__face--shadow {
+    animation-name: cube-selected-shadow;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes cube-rotate {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+@keyframes cube-selected {
+  to { transform: translateZ(225px) rotateZ(-45deg); }
+}
+
+@keyframes cube-selected-shadow {
+  to {
+    transform:  rotateY(180deg) translateZ(225px) scale(1.5);
+    opacity: .5;
+  }
+}

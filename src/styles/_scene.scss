@@ -1,0 +1,26 @@
+.scene {
+  position: relative;
+  width: 280px;
+  height: 320px;
+
+  &--paused {
+    .surface__inner,
+    .cube__inner {
+      animation-play-state: paused;
+    }
+
+    .cube__core:not(.cube__core--selected) .cube__face {
+      animation-name: fade-out;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
