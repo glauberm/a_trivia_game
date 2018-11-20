@@ -9,6 +9,7 @@
       animation-play-state: paused;
     }
 
+    .surface__core:not(.surface__core--selected) .badge,
     .cube__core:not(.cube__core--selected) .cube__face {
       animation-name: fade-out;
       animation-duration: 0.2s;

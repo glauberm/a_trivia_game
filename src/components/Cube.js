@@ -1,20 +1,10 @@
-import Utils from './Utils';
-import AlgebraicExpression from './AlgebraicExpression';
+import Utils from '../controllers/Utils';
+import AlgebraicExpression from '../controllers/AlgebraicExpression';
 
-class Scene {
-  constructor(correctExpression, correctResult) {
-    this.setTitle(correctExpression);
+class Cube {
+  constructor(correctResult) {
     this.setCubes(correctResult);
     this.handleCubeFaceClick();
-  }
-
-  setTitle(correctExpression) {
-    const documentTitle = document.title;
-    const titleElement = document.getElementById('title');
-    const title = correctExpression + ' = ?';
-
-    document.title = title + ' • ' + documentTitle;
-    titleElement.textContent = title;
   }
 
   setCubes(correctResult) {
@@ -50,23 +40,20 @@ class Scene {
   }
 
   handleCubeSelect(e) {
-    const wall = document.getElementById('wall');
-    const light = document.getElementById('light');
-    const scene = document.getElementById('scene');
-    const spotlight = document.getElementById('spotlight');
-    const shadow = document.getElementById('shadow');
     const cube = e.target.parentElement;
     const surface = cube.parentElement.parentElement.parentElement;
-    
-    wall.classList.add('wall--active');
-    light.classList.add('light--active');
-    scene.classList.add('scene--paused');
-    spotlight.classList.add('spotlight--active');
-    shadow.classList.add('shadow--active');
+
     cube.classList.add('cube__core--selected');
     surface.classList.add('surface__core--selected');
     surface.parentElement.parentElement.classList.add('surface--active');
+    
+    document.getElementById('wall').classList.add('wall--active');
+    document.getElementById('timer').classList.add('timer--active');
+    document.getElementById('light').classList.add('light--active');
+    document.getElementById('scene').classList.add('scene--paused');
+    document.getElementById('spotlight').classList.add('spotlight--active');
+    document.getElementById('shadow').classList.add('shadow--active');
   }
 }
 
-export default Scene;
+export default Cube;

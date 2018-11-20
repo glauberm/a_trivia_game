@@ -1,4 +1,4 @@
-import Utils from './Utils';
+import Utils from '../controllers/Utils';
 
 class AlgebraicExpression {
   constructor(x = null, y = null, misleading = false) {

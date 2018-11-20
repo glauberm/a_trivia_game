@@ -1,15 +1,30 @@
 .timer {
+  position: relative;
   display: inline-block;
-  background-color: darken(#afbfd2, 17.5%);
+  background-color: #e53b44;
   box-shadow:
-    0 2px 1px darken(#4f6781, 2.5%) inset,
-    0 -2px 1px rgba(255, 255, 255, .25) inset,
-    0 2px 1px rgba(255, 255, 255, .25)
+    0 -2px 1px darken(#e53b44, 10%) inset,
+    0 1px 1px rgba(255, 255, 255, .5) inset,
+    0 1px 1px 1px lighten(#4f6781, 17.5%)
   ;
-  padding: 3px;
-  border-radius: 36px;
+  padding: 4px;
+  border-radius: 2.5em;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #d11c25;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    z-index: -1;
+  }
 
   &__inner {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,11 +33,39 @@
     height: 2.5em;
     width: 2.5em;
     border-radius: 2.5em;
-    box-shadow: 0 2px 1px rgba(255, 255, 255, .25) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .25) inset;
   }
 
   &__core {
-    font-size: 1.25em;
-    line-height: 1;
+    position: absolute;
+    height: 45%;
+    top: 10%;
+    width: 2px;
+    border-radius: 2px;
+    background-color: #3f2832;
+    transform-origin: center bottom;
+    animation-name: timer-rotate;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
   }
+
+  &--active::after {
+    animation-name: timer-active;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes timer-rotate {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+@keyframes timer-active {
+  to { transform: translateY(-2.5px); }
 }

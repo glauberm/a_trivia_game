@@ -1,10 +1,9 @@
 import './main.css';
-import Scene from './classes/Scene';
-import AlgebraicExpression from './classes/AlgebraicExpression';
+import AlgebraicExpression from './controllers/AlgebraicExpression';
+import Scene from './components/Scene';
 
 document.addEventListener('DOMContentLoaded', function () {
   const correctExpression = new AlgebraicExpression();
-  console.log(correctExpression.getExpression());
   console.log(correctExpression.getResult());
 
   new Scene(
