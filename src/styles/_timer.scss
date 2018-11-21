@@ -29,6 +29,7 @@
     justify-content: center;
     align-items: center;
     background-color: #ddd;
+    background: linear-gradient(to bottom, #eee 0%,#ddd 100%);
     color: lighten(#4f6781, 10%);
     height: 2.5em;
     width: 2.5em;
@@ -38,15 +39,16 @@
 
   &__core {
     position: absolute;
-    height: 45%;
-    top: 10%;
-    width: 2px;
-    border-radius: 2px;
+    height: 1.1em;
+    top: 50%;
+    margin-top: -1.1em;
+    width: 0.1em;
+    border-radius: 0.1em;
     background-color: #3f2832;
     transform-origin: center bottom;
     animation-name: timer-rotate;
-    animation-duration: 60s;
-    animation-timing-function: steps(60);
+    animation-duration: 30s;
+    animation-timing-function: steps(30);
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
   }

@@ -5,95 +5,154 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#e53b44">
-  <title>Speed Math Game</title>
+  <title>A Trivia Game</title>
 </head>
 
 <body>
+
   <header class="header">
-    <div class="wall" id="wall">
-      <h1 class="wall__title" id="title">Speed Math Game</h1>
-      <div class="timer" id="timer">
-          <div class="timer__inner">
-            <div class="timer__core"></div>
-          </div>
+    <div class="header__inner">
+
+      <div class="wall" id="wall">
+        <h1 class="wall__title" id="title">A Trivia Game</h1>
+        <p class="wall__subtitle">by Glauber Mota</p>
+        <div class="timer" id="timer">
+            <div class="timer__inner">
+              <div class="timer__core"></div>
+            </div>
+        </div>
       </div>
+
+      <div class="light" id="light"></div>
+
+      <div class="scene" id="scene">
+        <div class="spotlight" id="spotlight">
+          <div class="spotlight__inner"></div>
+        </div>
+
+        <div class="surface" id="surface">
+
+          <div class="surface__inner">
+            <div class="surface__core">
+              <div class="cube">
+                <div class="cube__inner">
+                  <div class="cube__core" id="cubeA">
+                    <div class="cube__face cube__face--top">A</div>
+                    <div class="cube__face cube__face--front">A</div>
+                    <div class="cube__face cube__face--back">A</div>
+                    <div class="cube__face cube__face--left">A</div>
+                    <div class="cube__face cube__face--right">A</div>
+                    <div class="cube__face cube__face--bottom"></div>
+                    <div class="cube__face cube__face--shadow"></div>
+                  </div>
+                  <div class="badge badge__top"></div>
+                  <div class="badge badge__bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="surface__inner">
+            <div class="surface__core">
+              <div class="cube">
+                <div class="cube__inner">
+                  <div class="cube__core" id="cubeB">
+                    <div class="cube__face cube__face--top">B</div>
+                    <div class="cube__face cube__face--front">B</div>
+                    <div class="cube__face cube__face--back">B</div>
+                    <div class="cube__face cube__face--left">B</div>
+                    <div class="cube__face cube__face--right">B</div>
+                    <div class="cube__face cube__face--bottom"></div>
+                    <div class="cube__face cube__face--shadow"></div>
+                  </div>
+                  <div class="badge badge__top"></div>
+                  <div class="badge badge__bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="surface__inner">
+            <div class="surface__core">
+              <div class="cube">
+                <div class="cube__inner">
+                  <div class="cube__core" id="cubeC">
+                    <div class="cube__face cube__face--top">C</div>
+                    <div class="cube__face cube__face--front">C</div>
+                    <div class="cube__face cube__face--back">C</div>
+                    <div class="cube__face cube__face--left">C</div>
+                    <div class="cube__face cube__face--right">C</div>
+                    <div class="cube__face cube__face--bottom"></div>
+                    <div class="cube__face cube__face--shadow"></div>
+                  </div>
+                  <div class="badge badge__top"></div>
+                  <div class="badge badge__bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface__inner">
+            <div class="surface__core">
+              <div class="cube">
+                <div class="cube__inner">
+                  <div class="cube__core" id="cubeD">
+                    <div class="cube__face cube__face--top">D</div>
+                    <div class="cube__face cube__face--front">D</div>
+                    <div class="cube__face cube__face--back">D</div>
+                    <div class="cube__face cube__face--left">D</div>
+                    <div class="cube__face cube__face--right">D</div>
+                    <div class="cube__face cube__face--bottom"></div>
+                    <div class="cube__face cube__face--shadow"></div>
+                  </div>
+                  <div class="badge badge__top"></div>
+                  <div class="badge badge__bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      
     </div>
   </header>
+
   <main class="main">
-    <div class="light" id="light"></div>
 
-    <div class="scene" id="scene">
-      <div class="spotlight" id="spotlight"></div>
-
-      <div class="surface" id="surface">
-        <div class="surface__inner">
-          <div class="surface__core">
-            <div class="cube">
-              <div class="cube__inner">
-                <div class="cube__core">
-                  <div class="cube__face cube__face--top cube__text"></div>
-                  <div class="cube__face cube__face--front cube__text"></div>
-                  <div class="cube__face cube__face--back cube__text"></div>
-                  <div class="cube__face cube__face--left cube__text"></div>
-                  <div class="cube__face cube__face--right cube__text"></div>
-                  <div class="cube__face cube__face--bottom"></div>
-                  <div class="cube__face cube__face--shadow"></div>
-                </div>
-                <div class="badge badge__top"></div>
-                <div class="badge badge__bottom"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="surface__inner">
-          <div class="surface__core">
-            <div class="cube">
-              <div class="cube__inner">
-                <div class="cube__core">
-                  <div class="cube__face cube__face--top cube__text"></div>
-                  <div class="cube__face cube__face--front cube__text"></div>
-                  <div class="cube__face cube__face--back cube__text"></div>
-                  <div class="cube__face cube__face--left cube__text"></div>
-                  <div class="cube__face cube__face--right cube__text"></div>
-                  <div class="cube__face cube__face--bottom"></div>
-                  <div class="cube__face cube__face--shadow"></div>
-                </div>
-                <div class="badge badge__top"></div>
-                <div class="badge badge__bottom"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="surface__inner">
-          <div class="surface__core">
-            <div class="cube">
-              <div class="cube__inner">
-                <div class="cube__core">
-                  <div class="cube__face cube__face--top cube__text"></div>
-                  <div class="cube__face cube__face--front cube__text"></div>
-                  <div class="cube__face cube__face--back cube__text"></div>
-                  <div class="cube__face cube__face--left cube__text"></div>
-                  <div class="cube__face cube__face--right cube__text"></div>
-                  <div class="cube__face cube__face--bottom"></div>
-                  <div class="cube__face cube__face--shadow"></div>
-                </div>
-                <div class="badge badge__top"></div>
-                <div class="badge badge__bottom"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+    <div class="panel">
+      <h2 class="panel__question" id="question">What type of animal was Harambe, who was shot after a child fell into it&#039;s enclosure at the Cincinnati Zoo?</h2>
+      <ol class="panel__alternatives">
+        <li class="panel__alternative">
+          <button class="panel__button" id="alternativeA">
+            <span class="panel__text" id="textA">You smell extremely unpleasant.</span>
+          </button>
+        </li>
+        <li class="panel__alternative">
+          <button class="panel__button" id="alternativeB">
+            <span class="panel__text" id="textB">You smell extremely unpleasant.</span>
+          </button>
+        </li class="panel__alternative">
+        <li class="panel__alternative">
+          <button class="panel__button" id="alternativeC">
+            <span class="panel__text" id="textC">You smell extremely unpleasant. You smell extremely unpleasant.</span>
+          </button>
+        </li>
+        <li class="panel__alternative">
+          <button class="panel__button" id="alternativeD">
+            <span class="panel__text" id="textD">You smell extremely unpleasant.</span>
+          </button>
+        </li>
+      </ol>
     </div>
-      
-    <div class="shadow" id="shadow"></div>
+    
   </main>
 
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <div class="shadow" id="shadow"></div>
+  </footer>
+
 </body>
 
 </html>

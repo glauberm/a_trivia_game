@@ -11,6 +11,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
+  color: lighten(#afbfd2, 25%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,9 +19,19 @@ body {
 .header {
   overflow-x: hidden;
   position: absolute;
-  height: 50%;
+  height: 100%;
   width: 100%;
   top: 0;
+
+  &__inner {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .main {
@@ -28,7 +39,5 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  bottom: 0;
 }

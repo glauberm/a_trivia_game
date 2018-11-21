@@ -1,32 +1,29 @@
-import Utils from '../controllers/Utils';
-import AlgebraicExpression from '../controllers/AlgebraicExpression';
-
 class Cube {
-  constructor(correctResult) {
-    this.setCubes(correctResult);
+  constructor() {
+    // this.setCubes(correctResult);
     this.handleCubeFaceClick();
   }
 
-  setCubes(correctResult) {
-    const cubes = document.getElementsByClassName('cube__inner');
-    const correctIndex = Utils.getRandomInt(0, 3);
+  // setCubes(correctResult) {
+  //   const cubes = document.getElementsByClassName('cube__inner');
+  //   const correctIndex = Utils.getRandomInt(0, 3);
 
-    for (let i = 0; i < cubes.length; i++) {
-      const cubeText = cubes[i].getElementsByClassName('cube__text');
+  //   for (let i = 0; i < cubes.length; i++) {
+  //     const cubeText = cubes[i].getElementsByClassName('cube__text');
 
-      if (i === correctIndex) {
-        for (let i = 0; i < cubeText.length; i++) {
-          cubeText[i].textContent = correctResult;
-        }
-      } else {
-        const expression = new AlgebraicExpression(correctResult, null, true);
+  //     if (i === correctIndex) {
+  //       for (let i = 0; i < cubeText.length; i++) {
+  //         cubeText[i].textContent = correctResult;
+  //       }
+  //     } else {
+  //       const expression = new AlgebraicExpression(correctResult, null, true);
         
-        for (let i = 0; i < cubeText.length; i++) {
-          cubeText[i].textContent = expression.getResult();
-        }
-      }
-    }
-  }
+  //       for (let i = 0; i < cubeText.length; i++) {
+  //         cubeText[i].textContent = expression.getResult();
+  //       }
+  //     }
+  //   }
+  // }
 
   handleCubeFaceClick() {
     const cubeFace = document.getElementsByClassName('cube__face');

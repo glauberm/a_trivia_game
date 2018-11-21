@@ -1,7 +1,8 @@
 .scene {
   position: relative;
-  width: 280px;
-  height: 320px;
+  bottom: 0;
+  height: 420px;
+  width: 320px;
 
   &--paused {
     .surface__inner,
@@ -12,10 +13,14 @@
     .surface__core:not(.surface__core--selected) .badge,
     .cube__core:not(.cube__core--selected) .cube__face {
       animation-name: fade-out;
-      animation-duration: 0.2s;
+      animation-duration: 0.1s;
       animation-timing-function: ease-out;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
+    }
+
+    .cube__core:not(.cube__core--selected) .cube__face {
+      animation-delay: 0.1s;
     }
   }
 }

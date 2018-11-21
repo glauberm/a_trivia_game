@@ -1,22 +1,16 @@
 .cube {
   position: relative;
-  width: 50px;
-  height: 50px;
   transform: translateZ(25px);
   transform-style: preserve-3d;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
 
   &__inner {
     position: relative;
-    width: 50px;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
     animation-name: cube-rotate;
-    animation-duration: 4.5s;
+    animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
@@ -43,7 +37,7 @@
     height: 50px;
     background-color: $cube-gray400;
     border: 5px solid $cube-gray400;
-    font-size: 1.1em;
+    line-height: 1;
     color: $cube-black;
     text-shadow: 0 1px 1px $cube-gray200;
     box-shadow: 0 0 0 2.5px $cube-gray500 inset;

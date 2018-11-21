@@ -1,14 +1,24 @@
 .wall {
+  position: absolute;
   text-align: center;
 
-  &__title {
+  &__title,
+  &__subtitle {
     font-weight: normal;
     color: transparent;
+    line-height: 1;
     background-color: darken(#4f6781, 2.5%);
     text-shadow: 0 2px 1px rgba(255, 255, 255, .25);
     background-clip: text;
-    margin-bottom: 0.235em;
     transform-style: preserve-3d;
+  }
+
+  &__title {
+    margin-bottom: 0.2em;
+  }
+
+  &__subtitle {
+    margin-top: 0.2em;
   }
 
   &--active {
