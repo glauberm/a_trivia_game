@@ -6,16 +6,33 @@
 
   &__top {
     border: 1px solid rgba(255, 255, 255, 0.25);
-    background-image: url("./images/wrong.svg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-color: #e53b44;
+    background-size: 24px;
     transform: translateZ(5px);
+
+    &--correct {
+      background-image: url("./images/correct.svg");
+      background-color: #63c64d;
+    }
+  
+    &--incorrect {
+      background-image: url("./images/incorrect.svg");
+      background-color: #e53b44;
+    }
   }
 
   &__bottom {
-    border: 1px solid #9e2835;
-    background-color: #9e2835;
     transform: translateZ(0);
+
+    &--correct {
+      border: 1px solid #327345;
+      background-color: #327345;
+    }
+  
+    &--incorrect {
+      border: 1px solid #9e2835;
+      background-color: #9e2835;
+    }
   }
 }

@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: calc(50vh + 55px);
+  height: 50%;
   background: linear-gradient(to bottom, #afbfd2 0%, #4f6781 100%);
   z-index: -1;
 
@@ -19,6 +19,6 @@
 
 @keyframes shadow-active {
   to {
-    height: 60vh;
+    height: 100%;
   }
 }

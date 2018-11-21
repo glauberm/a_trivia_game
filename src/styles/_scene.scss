@@ -1,8 +1,8 @@
 .scene {
   position: relative;
   bottom: 0;
-  height: 420px;
-  width: 320px;
+  width: $scene-width;
+  height: $scene-height;
 
   &--paused {
     .surface__inner,

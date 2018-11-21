@@ -1,13 +1,13 @@
 .panel {
   position: relative;
-  bottom: -290px;
+  bottom: $panel-bottom;
   width: 100%;
-  max-width: 320px;
+  max-width: $panel-width;
   margin: 0 auto;
 
   &__question {
     font-weight: normal;
-    margin: 0.4em 0.4em 0.6em;
+    margin: 0 0.4em 0.6em;
     text-align: center;
     line-height: 1;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
@@ -15,57 +15,73 @@
 
   &__alternatives {
     position: relative;
-    margin: 0 0 1em;
-    padding: 0 0 0 2em;
-    list-style: upper-alpha;
+    margin: 0;
+    padding: 0 0.5em 0.2em;
+    list-style: none;
   }
 
   &__alternative {
-    line-height: 1;
-    color: rgba(#743f39, 0.75);
-
-    &+& {
-      margin-top: 0.4em;
-    }
+    margin-bottom: 0.4em;
   }
 
   &__button {
     display: block;
-    width: calc(100% + 1.2em);
-    margin-left: -1.6em;
-    padding: 0.5em 0.5em calc(0.5em + 1px) 1.75em;
-    background-color: rgba($cube-gray200, 0.9);
-    background: linear-gradient(to bottom, rgba($cube-gray200, 0.9) 0%, rgba($cube-gray400, 0.9) 100%);
+    width: 100%;
+    padding: 0.5em 0.5em calc(0.5em + 1px) 0.5em;
+    background: rgba($cube-gray200, 0.9);
+    background: linear-gradient(
+      to bottom,
+      rgba($cube-gray200, 0.9) 0%,
+      rgba($cube-gray400, 0.9) 100%
+    );
     border: 1px solid transparent;
     border-top-color: lighten($cube-gray200, 2.5%);
     border-bottom-color: $cube-gray400;
     border-radius: 0.3em;
     text-align: left;
+    color: #743f39;
     text-shadow: 0 1px 0 $cube-gray200;
     box-shadow: 0 2px 5px rgba(0,0,0,0.175);
-    transition: box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 
     &:hover,
     &:focus {
       outline: 0;
-      box-shadow:
-        0 2px 5px rgba(0,0,0,0.175),
-        0 0 0 1px #ffe762
-      ;
+      transform: scale(0.975);
+      box-shadow: 0 1px 1px rgba(0,0,0,0.175);
     }
 
     &:active {
       text-shadow: none;
       border-color: rgba(0,0,0,0.175);
-      border-bottom-color: lighten($cube-gray200, 2.5%);
-      background: linear-gradient(to top, rgba($cube-gray200, 0.9) 0%, rgba($cube-gray400, 0.9) 100%);
       box-shadow: 0 2px 5px rgba(0,0,0,0.175) inset;
     }
-  }  
 
-  &__text {
-    color: #743f39;
+    &::before {
+      color: rgba(#743f39, 0.75);
+      padding: 0 0.2em;
+    }
+  }
+
+  &--active {
+    animation-name: panel-active;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+#alternative-a::before { content: "A."; }
+#alternative-b::before { content: "B."; }
+#alternative-c::before { content: "C."; }
+#alternative-d::before { content: "D."; }
+
+@keyframes panel-active {
+  to {
+    transform: translateY(75px) rotateX(35deg);
   }
 }

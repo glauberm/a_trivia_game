@@ -3,6 +3,19 @@
   transform: translateZ(25px);
   transform-style: preserve-3d;
 
+  &__wrapper {
+    position: relative;
+    transform-style: preserve-3d;
+
+    &--selected {
+      animation-name: cube-selected;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
   &__inner {
     position: relative;
     display: flex;
@@ -22,7 +35,7 @@
     transform-style: preserve-3d;
 
     &--selected {
-      animation-name: cube-selected;
+      animation-name: cube-reveal;
       animation-duration: 1s;
       animation-timing-function: ease;
       animation-iteration-count: 1;
@@ -37,6 +50,7 @@
     height: 50px;
     background-color: $cube-gray400;
     border: 5px solid $cube-gray400;
+    font-size: 1.5em;
     line-height: 1;
     color: $cube-black;
     text-shadow: 0 1px 1px $cube-gray200;
@@ -75,7 +89,7 @@
   }
 
   &__core--selected &__face--shadow {
-    animation-name: cube-selected-shadow;
+    animation-name: cube-reveal-shadow;
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-iteration-count: 1;
@@ -84,16 +98,20 @@
   }
 }
 
+@keyframes cube-selected {
+  to { transform: rotateZ(-360deg); }
+}
+
 @keyframes cube-rotate {
   0% { transform: rotateZ(0deg); }
   100% { transform: rotateZ(360deg); }
 }
 
-@keyframes cube-selected {
+@keyframes cube-reveal {
   to { transform: translateZ(200px) rotateZ(-45deg); }
 }
 
-@keyframes cube-selected-shadow {
+@keyframes cube-reveal-shadow {
   to {
     transform: rotateY(180deg) translateZ(200px) scale(1.35);
     opacity: .5;

@@ -1,14 +1,16 @@
 .surface {
   position: absolute;
-  bottom: 165px;
-  left: 20px;
+  bottom: $surface-bottom;
   width: 100%;
   transform: rotateX(80deg);
   transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__inner {
     position: absolute;
-    width: 280px;
+    width: $surface-width;
     transform-style: preserve-3d;
     z-index: 1;
     animation-name: surface-rotate, surface-z-index;
@@ -23,7 +25,6 @@
 
   &__core {
     position: relative;
-    height: 50px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
