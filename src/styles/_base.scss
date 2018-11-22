@@ -22,10 +22,11 @@ body {
 }
 
 .header {
+  overflow: hidden;
   position: relative;
   width: 330px;
   margin-left: -165px;
-  height: 85vh;
+  height: 82.5vh;
   top: 0;
   left: 50%;
   display: flex;
