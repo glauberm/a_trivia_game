@@ -14,7 +14,7 @@ class Panel {
     for (let i = 0; i < alternatives.length; i++) {
       alternatives[i].innerHTML = alternativesArray[i].alternative;
       alternatives[i].setAttribute('status', alternativesArray[i].status);
-      console.log(alternativesArray[i]);
+      // console.log(alternativesArray[i]);
     }
 
     const badge = new Badge();
