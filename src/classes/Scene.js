@@ -97,7 +97,6 @@ class Scene {
     document.getElementById('spotlight').classList.remove('spotlight--active');
     document.getElementById('surface').classList.remove('surface--active');
     document.getElementById('main').classList.remove('main--active');
-    document.getElementById('main').scroll({ top: 0,  behavior: 'smooth' });
     document.getElementById('panel').classList.remove('panel--active');
     document.getElementById('shadow').classList.remove('shadow--active');
   }

@@ -2,10 +2,10 @@
   position: absolute;
   width: $light-width;
   height: $light-height;
-  top: 0;
+  top: -160px;
   background: #ffe762;
-  background: linear-gradient(to bottom, #ffe762 0%,rgba(255,231,98,0) 100%);
-  clip-path: polygon(0% 87.5%, 40% 0%, 60% 0%, 100% 87.5%);
+  background: linear-gradient(to bottom, #ffe762 0%,rgba(255,231,98,0.1) 100%);
+  clip-path: polygon(0% 100%, 40% 0%, 60% 0%, 100% 100%);
   opacity: .5;
 
   &--active {
@@ -20,6 +20,6 @@
 
 @keyframes light-active {
   to {
-    clip-path: polygon(0% 87.5%, 10% 0%, 90% 0%, 100% 87.5%);
+    clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
   }
 }

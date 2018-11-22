@@ -4,7 +4,7 @@ $cube-gray500: #a77549;
 $cube-gray400: #ca8d54;
 $cube-gray200: #e4a672;
 
-$scene-height: 480px;
+$scene-height: 100%;
 $scene-width: 320px;
 
 $spotlight-size: 320px;
@@ -13,7 +13,7 @@ $surface-bottom: 160px;
 $surface-width: 280px;
 
 $light-width: 320px;
-$light-height: 360px; 
+$light-height: 100%; 
 
 $panel-width: 320px;
-$panel-bottom: -360px;
+$panel-bottom: 0;

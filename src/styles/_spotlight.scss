@@ -3,8 +3,11 @@
   bottom: 0;
   width: $spotlight-size;
   height: $spotlight-size;
+  border-radius: $spotlight-size;
+  box-shadow: 0 0 5px 2px #e6d876;
   transform: rotateX(80deg) rotateZ(-30deg);
   transform-style: preserve-3d;
+  // overflow: hidden;
 
   &__inner {
     position: absolute;
@@ -13,7 +16,6 @@
     border-radius: 50%;
     transform-style: preserve-3d;
     background-color: #e6d876;
-    box-shadow: 0 0 2.5px 2.5px #e6d876;
     display: flex;
     justify-content: center;
     align-items: center;
