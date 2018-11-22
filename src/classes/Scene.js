@@ -17,10 +17,12 @@ class Scene {
       const cube = document.getElementById(e.target.getAttribute('cube'));
       const wrapper = cube.parentElement.parentElement;
       const surface = wrapper.parentElement.parentElement;
+      const badge = cube.nextElementSibling;
       
       cube.classList.add('cube__core--selected');
       wrapper.classList.add('cube__wrapper--selected');
       surface.classList.add('surface__core--selected');
+      badge.classList.add('badge--selected');
       
       document.getElementById('scene').classList.add('scene--paused');
       document.getElementById('wall').classList.add('wall--active');
@@ -41,19 +43,15 @@ class Scene {
   }
 
   destroy() {
-    const cube = document.getElementsByClassName('cube__core--selected');
-    for (let i = 0; i < cube.length; i++) {
-      cube[i].classList.remove('cube__core--selected');
-    }
-    const wrapper = document.getElementsByClassName('cube__wrapper--selected');
-    for (let i = 0; i < wrapper.length; i++) {
-      wrapper[i].classList.remove('wrapper__core--selected');
-    }
-    const surface = document.getElementsByClassName('surface__core--selected');
-    for (let i = 0; i < surface.length; i++) {
-      surface[i].classList.remove('surface__core--selected');
-    }
-
+    document.querySelector('.cube__core--selected')
+      .classList.remove('cube__core--selected');
+    document.querySelector('.cube__wrapper--selected')
+      .classList.remove('cube__wrapper--selected');
+    document.querySelector('.surface__core--selected')
+      .classList.remove('surface__core--selected');
+    document.querySelector('.badge--selected')
+      .classList.remove('badge--selected');
+      
     document.getElementById('scene').classList.remove('scene--paused');
     document.getElementById('wall').classList.remove('wall--active');
     document.getElementById('timer').classList.remove('timer--active');

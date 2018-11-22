@@ -48,4 +48,15 @@ body {
 
 .footer {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(#193d3f,0.5);
+  background: radial-gradient(circle at center, rgba(#193d3f,0.5) 0%,rgba(#193d3f,1) 100%);
+  text-align: center;
+  display: none;
 }

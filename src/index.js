@@ -18,12 +18,13 @@ function init() {
       scene.handleClick();
     })
     .then(() => {
-      document.getElementById('reboot').addEventListener('click', init);
+      document.getElementById('reboot').addEventListener('click', destroy);
       document.getElementById('destroy').addEventListener('click', destroy);
     });
 }
 
 function destroy() {
+  document.getElementById('reboot').removeEventListener('click', destroy);
   document.getElementById('destroy').removeEventListener('click', destroy);
 
   scene.destroy();
