@@ -98,6 +98,11 @@
   }
 }
 
+#cube-a .cube__text:after { content: "A"; }
+#cube-b .cube__text:after { content: "B"; }
+#cube-c .cube__text:after { content: "C"; }
+#cube-d .cube__text:after { content: "D"; }
+
 @keyframes cube-selected {
   to { transform: rotateZ(-360deg); }
 }

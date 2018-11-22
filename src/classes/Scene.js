@@ -1,10 +1,14 @@
 import Panel from './Panel';
+import Result from './Result';
 
 class Scene {
   build(question, correctAnswer, incorrectAnswers) {
+    this.question = question;
+    this.correctAnswer = correctAnswer;
+
     const panel = new Panel();
-    panel.buildTitle(question);
-    panel.buildAlternatives(correctAnswer, incorrectAnswers);
+    panel.buildTitle(this.question);
+    panel.buildAlternatives(this.correctAnswer, incorrectAnswers);
   }
 
   handleClick() {
@@ -35,6 +39,9 @@ class Scene {
       document.getElementById('main').scroll({ top: 0,  behavior: 'smooth' });
       document.getElementById('panel').classList.add('panel--active');
       document.getElementById('shadow').classList.add('shadow--active');
+
+      const result = new Result();
+      result.build(e.target.getAttribute('status'), this.question, this.correctAnswer);
     };
 
     for (let i = 0; i < panelButtons.length; i++) {
@@ -43,14 +50,44 @@ class Scene {
   }
 
   destroy() {
-    document.querySelector('.cube__core--selected')
-      .classList.remove('cube__core--selected');
-    document.querySelector('.cube__wrapper--selected')
-      .classList.remove('cube__wrapper--selected');
-    document.querySelector('.surface__core--selected')
-      .classList.remove('surface__core--selected');
-    document.querySelector('.badge--selected')
-      .classList.remove('badge--selected');
+    document.getElementById('question').innerHTML = 'Loading...';
+
+    const panelButtons = document.getElementsByClassName('panel__button');
+    for (let i = 0; i < panelButtons.length; i++) {
+      panelButtons[i].removeAttribute('status');
+      panelButtons[i].innerHTML = 'Loading...';
+    }
+
+    document.getElementById('footer').hidden = true;
+    document.getElementById('result').classList.remove('result--active');
+    document.getElementById('result').classList.remove('result--correct');
+    document.getElementById('result').classList.remove('result--incorrect');
+    document.getElementById('result-status').classList.remove('result__status--correct');
+    document.getElementById('result-status').classList.remove('result__status--incorrect');
+    document.getElementById('result-button').classList.remove('result__button--correct');
+    document.getElementById('result-button').classList.remove('result__button--incorrect');
+    document.getElementById('destroy').classList.remove('result__destroy--correct');
+    document.getElementById('destroy').classList.remove('result__destroy--incorrect');
+    document.getElementById('result-status').innerHTML = '';
+    document.getElementById('result-text').innerHTML = '';
+    document.getElementById('destroy').innerHTML = '';
+
+    const cube = document.getElementsByClassName('cube__core--selected');
+    for (let i = 0; i < cube.length; i++) {
+      cube[i].classList.remove('cube__core--selected');
+    }
+    const wrapper = document.getElementsByClassName('cube__wrapper--selected');
+    for (let i = 0; i < wrapper.length; i++) {
+      wrapper[i].classList.remove('cube__wrapper--selected');
+    }
+    const surface = document.getElementsByClassName('surface__core--selected');
+    for (let i = 0; i < surface.length; i++) {
+      surface[i].classList.remove('surface__core--selected');
+    }
+    const badge = document.getElementsByClassName('badge--selected');
+    for (let i = 0; i < badge.length; i++) {
+      badge[i].classList.remove('badge--selected');
+    }
       
     document.getElementById('scene').classList.remove('scene--paused');
     document.getElementById('wall').classList.remove('wall--active');
