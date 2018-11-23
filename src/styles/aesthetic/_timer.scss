@@ -1,28 +1,31 @@
 .timer {
-  background-color: #e53b44;
-  box-shadow:
-    0 -2px 1px darken(#e53b44, 10%) inset,
-    0 1px 1px rgba(255, 255, 255, .5) inset,
-    0 1px 1px 1px lighten(#4f6781, 17.5%)
-  ;
-  padding: 4px;
-  border-radius: 50%;
-
-  &::after {
-    background-color: #d11c25;
+  &__wrapper {
+    background-color: $redLight;
+    box-shadow:
+      0 -2px 1px darken($redLight, 10%) inset,
+      0 1px 1px rgba(255, 255, 255, .5) inset,
+      0 1px 1px 1px lighten($babyBlueDark, 17.5%)
+    ;
+    padding: 4px;
     border-radius: 50%;
+
+    &::after {
+      background-color: $red;
+      border-radius: 50%;
+    }
   }
 
   &__inner {
-    background-color: #ddd;
-    background: linear-gradient(to bottom, #eee 0%,#ddd 100%);
-    color: lighten(#4f6781, 10%);
+    background-color: $gray300;
+    background: linear-gradient(to bottom, $gray200 0%,$gray300 100%);
+    color: lighten($babyBlueDark, 10%);
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .25) inset;
   }
 
   &__core {
-    background-color: #3f2832;
+    background-color: $redDark;
+    box-shadow: 0 0 1px $redDark;
     animation-name: timer-rotate;
     animation-duration: 30s;
     animation-timing-function: steps(30);
@@ -46,5 +49,5 @@
 }
 
 @keyframes timer-active {
-  to { transform: translateY(-2.5px); }
+  to { transform: translateY(-4px); }
 }

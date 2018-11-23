@@ -12,10 +12,12 @@ class Panel {
   }
 
   action() {
+    this.panel.classList.add('panel--active');
     this.panelInner.classList.add('panel__inner--active');
   }
 
   cut() {
+    this.panel.classList.remove('panel--active');
     this.panelInner.classList.remove('panel__inner--active');
     this.panelQuestion.innerHTML = 'Loading...';
   }

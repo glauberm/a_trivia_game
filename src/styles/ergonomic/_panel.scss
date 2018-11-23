@@ -1,12 +1,10 @@
 .panel {
+  overflow-x: hidden;
   position: absolute;
   width: 100%;
   bottom: 0;
 
   &__inner {
-    position: relative;
-    bottom: 0;
-    width: 100%;
     max-width: 320px;
     margin: 0 auto;
   }
@@ -16,7 +14,6 @@
   }
 
   &__alternatives {
-    position: relative;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -34,5 +31,9 @@
   &__reboot-inner {
     display: block;
     width: 100%;
+  }
+
+  &--active {
+    overflow-y: hidden;
   }
 }

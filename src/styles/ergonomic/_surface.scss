@@ -1,6 +1,6 @@
 .surface {
   position: absolute;
-  bottom: 160px;
+  bottom: 185px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,8 +15,6 @@
   }
 
   &__core {
-    position: relative;
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     transform-style: preserve-3d;

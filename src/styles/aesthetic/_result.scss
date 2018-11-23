@@ -36,23 +36,23 @@
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
 
     &--correct {
-      color: #63c64d;
+      color: $greenLight;
     }
 
     &--incorrect {
-      color: #e53b44;
+      color: $redLight;
     }
   }
 
   &__question {
     line-height: 1;
-    color: #FFF;
+    color: $white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   }
 
   &__correct {
     line-height: 1;
-    color: #FFF;
+    color: $white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.25);
     font-weight: normal;
   }
@@ -66,14 +66,14 @@
     }
 
     &--correct {
-      background: #63c64d;
+      background: $greenLight;
       background: linear-gradient(
         to bottom,
-        #63c64d 0%,
-        darken(#63c64d, 10%) 100%
+        $greenLight 0%,
+        darken($greenLight, 10%) 100%
       );
       box-shadow:
-        0 1px 1px lighten(#63c64d, 10%) inset,
+        0 1px 1px lighten($greenLight, 10%) inset,
         0 2px 5px rgba(0,0,0,0.25)
       ;
 
@@ -86,14 +86,14 @@
     }
 
     &--incorrect {
-      background: #e53b44;
+      background: $redLight;
       background: linear-gradient(
         to bottom,
-        #e53b44 0%,
-        darken(#e53b44, 10%) 100%
+        $redLight 0%,
+        darken($redLight, 10%) 100%
       );
       box-shadow:
-        0 1px 1px lighten(#e53b44, 10%) inset,
+        0 1px 1px lighten($redLight, 10%) inset,
         0 2px 5px rgba(0,0,0,0.25)
       ;
 
@@ -118,8 +118,8 @@
     }
 
     &--correct {
-      color: darken(#327345, 10%);
-      text-shadow: 0 1px 2px lighten(#63c64d, 10%);
+      color: darken($green, 10%);
+      text-shadow: 0 1px 2px lighten($greenLight, 10%);
 
       &:hover,
       &:focus {
@@ -128,8 +128,8 @@
     }
 
     &--incorrect {
-      color: darken(#e53b44, 30%);
-      text-shadow: 0 1px 2px lighten(#e53b44, 10%);
+      color: darken($redLight, 30%);
+      text-shadow: 0 1px 2px lighten($redLight, 10%);
 
       &:hover,
       &:focus {
@@ -139,20 +139,20 @@
   }
 
   &--correct {
-    background-color: rgba(#193d3f, 0.5);
+    background-color: rgba($greenDark, 0.5);
     background: radial-gradient(
       circle at center,
-      rgba(#193d3f, 0.75) 0%,
-      rgba(#193d3f, 1) 100%
+      rgba($greenDark, 0.75) 0%,
+      rgba($greenDark, 1) 100%
     );
   }
 
   &--incorrect {
-    background-color: rgba(#3f2832, 0.5);
+    background-color: rgba($redDark, 0.5);
     background: radial-gradient(
       circle at center,
-      rgba(#3f2832, 0.75) 0%,
-      rgba(#3f2832, 1) 100%
+      rgba($redDark, 0.75) 0%,
+      rgba($redDark, 1) 100%
     );
   }
 }

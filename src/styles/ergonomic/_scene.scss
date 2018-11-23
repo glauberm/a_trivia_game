@@ -1,19 +1,13 @@
 .scene {
+  overflow: hidden;
   position: relative;
-  width: 330px;
-  margin-left: -165px;
-  height: 82.5vh;
-  top: 0;
-  left: 50%;
+  height: 420px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
 
   &__inner {
     position: relative;
-    top: 0;
     width: 320px;
     height: 100%;
   }

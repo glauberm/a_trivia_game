@@ -1,7 +1,7 @@
 .spotlight {
   &__inner {
     border-radius: 50%;
-    background-color: #e6d876;
+    background-color: $yellow;
     animation-name: spotlight-rotate;
     animation-duration: 4s;
     animation-timing-function: linear;
@@ -9,8 +9,8 @@
 
     &::after {
       content: "?";
-      color: #e5c369;
-      font-size: 110px;
+      color: $yellowDark;
+      font-size: 165px;
       line-height: 1;
     }
   }

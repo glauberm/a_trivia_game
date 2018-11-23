@@ -5,15 +5,16 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 24px;
+    transform: translateZ(4px);
 
     &--correct {
       background-image: url("./images/correct.svg");
-      background-color: #63c64d;
+      background-color: $greenLight;
     }
   
     &--incorrect {
       background-image: url("./images/incorrect.svg");
-      background-color: #e53b44;
+      background-color: $redLight;
     }
   }
 
@@ -21,13 +22,13 @@
     border-radius: 50%;
     
     &--correct {
-      border: 1px solid #327345;
-      background-color: #327345;
+      border: 1px solid $green;
+      background-color: $green;
     }
   
     &--incorrect {
-      border: 1px solid #9e2835;
-      background-color: #9e2835;
+      border: 1px solid $red;
+      background-color: $red;
     }
   }
 
@@ -40,6 +41,6 @@
 }
 
 @keyframes badge-rotate {
-  0% { transform: translateZ(5px) rotateZ(0deg); }
-  100% { transform: translateZ(5px) rotateZ(360deg); }
+  0% { transform: translateZ(4px) rotateZ(0deg); }
+  100% { transform: translateZ(4px) rotateZ(360deg); }
 }

@@ -1,5 +1,5 @@
 .shadow {
-  background: linear-gradient(to bottom, #afbfd2 0%, #4f6781 100%);
+  background: linear-gradient(to bottom, $babyBlueLight 0%, $babyBlueDark 100%);
 
   &--active {
     animation-name: shadow-active;

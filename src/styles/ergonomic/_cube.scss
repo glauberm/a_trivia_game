@@ -1,10 +1,7 @@
 .cube {
-  position: relative;
-  transform: translateZ(25px);
   transform-style: preserve-3d;
 
   &__wrapper {
-    position: relative;
     transform-style: preserve-3d;
   }
 
@@ -17,7 +14,6 @@
   }
 
   &__core {
-    position: relative;
     transform-style: preserve-3d;
   }
 

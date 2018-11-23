@@ -14,7 +14,7 @@
     font-weight: normal;
     text-align: center;
     line-height: 1;
-    color: #FFF;
+    color: $white;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   }
 
@@ -36,7 +36,7 @@
     border-bottom-color: $beige400;
     border-radius: 0.3em;
     text-align: left;
-    color: #743f39;
+    color: $brown;
     line-height: 1;
     text-shadow: 0 1px 0 $beige200;
     box-shadow: 0 2px 5px rgba(0,0,0,0.175);
@@ -58,21 +58,20 @@
     }
 
     &::before {
-      color: rgba(#743f39, 0.75);
+      color: rgba($brown, 0.75);
       padding: 0 0.2em;
     }
   }
 
   &__reboot {
-    text-align: center;
     padding: 0 0.5em 0.3em;
   }
   
   &__reboot-inner {
     background: transparent;
     border: 0 none;
-    padding: 0.5em 0.5em calc(0.5em + 1px) 0.5em;
-    color: #FFF;
+    padding: 0.5em 0.5em calc(0.5em + 1px) 0.8em;
+    color: $white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
     line-height: 1;
     transition: transform 0.2s ease, box-shadow 0.2s ease;

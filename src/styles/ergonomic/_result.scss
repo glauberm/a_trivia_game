@@ -19,10 +19,6 @@
     }
   }
 
-  &__core {
-    width: 90%;
-  }
-
   &__status {
     margin-top: 0;
   }
@@ -38,7 +34,6 @@
 
   &__reboot {
     position: relative;
-    top: -0.1em;
     height: 100%;
     width: 100%;
   }
