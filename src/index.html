@@ -11,19 +11,21 @@
 
 <body>
 
-  <header class="header">
+  <header class="scene">
 
-    <div class="wall" id="wall">
-      <h1 class="wall__title">A Trivia Game</h1>
-      <p class="wall__subtitle">by Glauber Mota</p>
-      <div class="timer" id="timer">
-          <div class="timer__inner">
-            <div class="timer__core"></div>
+    <div class="scene__inner" id="scene">
+
+      <div class="wall" id="wall">
+        <div class="wall__inner">
+          <h1 class="wall__title">A Trivia Game</h1>
+          <p class="wall__subtitle">by Glauber Mota</p>
+          <div class="timer" id="timer">
+              <div class="timer__inner">
+                <div class="timer__core"></div>
+              </div>
           </div>
+        </div>
       </div>
-    </div>
-
-    <div class="scene" id="scene">
 
       <div class="light" id="light"></div>
 
@@ -127,11 +129,11 @@
       
   </header>
 
-  <main class="main" id="main">
+  <main class="panel" id="panel">
 
-    <div class="panel" id="panel">
+    <div class="panel__inner" id="panel-inner">
 
-      <h2 class="panel__question" id="question">Loading...</h2>
+      <h2 class="panel__question" id="panel-question">Loading...</h2>
 
       <ol class="panel__alternatives">
         <li class="panel__alternative">
@@ -156,8 +158,8 @@
         </li>
       </ol>
 
-      <div class="reboot">
-        <button class="reboot__button" id="reboot">
+      <div class="panel__reboot">
+        <button class="panel__reboot-inner" id="panel-reboot">
           Next Question &raquo;
         </button>
       </div>
@@ -166,15 +168,15 @@
 
   </main>
 
-  <footer class="footer" id="footer" hidden>
+  <footer class="result" id="result" hidden>
 
-    <div class="result" id="result">
-      <div class="result__inner">
+    <div class="result__inner" id="result-inner">
+      <div class="result__core" id="result-core">
         <h2 class="result__status" id="result-status"></h2>
-        <h3 class="result__question" id="result-question"></h3>
-        <p class="result__correct" id="result-text"></p>
+        <p class="result__question" id="result-question"></p>
+        <h3 class="result__correct" id="result-text"></h3>
         <div class="result__button" id="result-button">
-          <button class="result__destroy" id="destroy"></button>
+          <button class="result__reboot" id="result-reboot"></button>
         </div>
       </div>
     </div>

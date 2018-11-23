@@ -1,0 +1,15 @@
+.badge {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+
+  &__top {
+    transform: translateZ(5px);
+    z-index: 2;
+  }
+
+  &__bottom {
+    transform: translateZ(0);
+    z-index: 1;
+  }
+}

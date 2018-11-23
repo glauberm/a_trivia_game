@@ -2,33 +2,35 @@ import Scene from './classes/Scene';
 import { request } from './services/Api';
 import './main.css';
 
-let scene = new Scene();
+document.addEventListener('DOMContentLoaded', () => {
+  let scene = new Scene();
+  const panelReboot = document.getElementById('panel-reboot');
+  const resultReboot = document.getElementById('result-reboot');
 
-function init() {
-  document.getElementById('reboot').removeEventListener('click', init);
+  function boot() {
+    request()
+      .then((response) => {
+        const result = response.results[0];
 
-  request()
-    .then((response) => {
-      const result = response.results[0];
-      const question = result.question;
-      const correctAnswer = result.correct_answer;
-      const incorrectAnswers = result.incorrect_answers;
-      
-      scene.build(question, correctAnswer, incorrectAnswers);
-      scene.handleClick();
-    })
-    .then(() => {
-      document.getElementById('reboot').addEventListener('click', destroy);
-      document.getElementById('destroy').addEventListener('click', destroy);
-    });
-}
+        scene.build(
+          result.question,
+          result.correct_answer,
+          result.incorrect_answers);
+        scene.handleClick();
+      })
+      .then(() => {
+        panelReboot.addEventListener('click', reboot);
+        resultReboot.addEventListener('click', reboot);
+      });
+  }
 
-function destroy() {
-  document.getElementById('reboot').removeEventListener('click', destroy);
-  document.getElementById('destroy').removeEventListener('click', destroy);
+  function reboot() {
+    panelReboot.removeEventListener('click', reboot);
+    resultReboot.removeEventListener('click', reboot);
 
-  scene.destroy();
-  init();
-}
+    scene.destroy();
+    boot();
+  }
 
-document.addEventListener('DOMContentLoaded', init);
+  boot();
+});

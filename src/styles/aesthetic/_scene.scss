@@ -1,10 +1,5 @@
 .scene {
-  position: relative;
-  top: 0;
-  width: $scene-width;
-  height: $scene-height;
-
-  &--paused {
+  &--active {
     .surface__inner,
     .cube__inner {
       animation-play-state: paused;
@@ -12,7 +7,7 @@
 
     .surface__core:not(.surface__core--selected) .badge,
     .cube__core:not(.cube__core--selected) .cube__face {
-      animation-name: fade-out;
+      animation-name: scene-paused;
       animation-duration: 0.1s;
       animation-timing-function: ease-out;
       animation-iteration-count: 1;
@@ -25,7 +20,7 @@
   }
 }
 
-@keyframes fade-out {
+@keyframes scene-paused {
   to {
     opacity: 0;
   }

@@ -1,12 +1,5 @@
 .cube {
-  position: relative;
-  transform: translateZ(25px);
-  transform-style: preserve-3d;
-
   &__wrapper {
-    position: relative;
-    transform-style: preserve-3d;
-
     &--selected {
       animation-name: cube-selected;
       animation-duration: 1s;
@@ -17,11 +10,6 @@
   }
 
   &__inner {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
     animation-name: cube-rotate;
     animation-duration: 3s;
     animation-timing-function: linear;
@@ -29,10 +17,8 @@
   }
 
   &__core {
-    position: relative;
     width: 50px;
     height: 50px;
-    transform-style: preserve-3d;
 
     &--selected {
       animation-name: cube-reveal;
@@ -45,47 +31,33 @@
   }
 
   &__face {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: $cube-gray400;
-    border: 5px solid $cube-gray400;
+    background-color: $beige400;
+    border: 5px solid $beige400;
     font-size: 1.5em;
     line-height: 1;
-    color: $cube-black;
-    text-shadow: 0 1px 1px $cube-gray200;
-    box-shadow: 0 0 0 2.5px $cube-gray500 inset;
-    transform-style: preserve-3d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: $beige900;
+    text-shadow: 0 1px 1px $beige200;
+    box-shadow: 0 0 0 2.5px $beige500 inset;
 
     &--top {
-      transform: rotateY(0deg) translateZ(25px);
-      background-color: $cube-gray200;
-      border: 5px solid $cube-gray200;
-      color: $cube-gray700;
+      background-color: $beige200;
+      border: 5px solid $beige200;
+      color: $beige700;
       text-shadow: none;
-      box-shadow: 0 0 0 2.5px $cube-gray400 inset;
+      box-shadow: 0 0 0 2.5px $beige400 inset;
     }
 
     &--bottom,
     &--shadow {
-      transform: rotateY(180deg) translateZ(25px);
-      background-color: $cube-gray700;
+      background-color: $beige700;
       border: 0 none;
       text-shadow: none;
     }
 
     &--shadow {
       opacity: .25;
-      box-shadow: 0 0 2.5px 2.5px $cube-gray700;
+      box-shadow: 0 0 2.5px 2.5px $beige700;
     }
-
-    &--front { transform: rotateX(-90deg) translateZ(25px); }
-    &--back { transform: rotateX(90deg) rotateZ(-180deg) translateZ(25px); }
-    &--left { transform: rotateY(-90deg) rotateZ(90deg) translateZ(25px); }
-    &--right { transform: rotateY(90deg) rotateZ(-90deg) translateZ(25px); }
   }
 
   &__core--selected &__face--shadow {
@@ -98,10 +70,10 @@
   }
 }
 
-#cube-a .cube__text:after { content: "A"; }
-#cube-b .cube__text:after { content: "B"; }
-#cube-c .cube__text:after { content: "C"; }
-#cube-d .cube__text:after { content: "D"; }
+#cube-a .cube__text::after { content: "A"; }
+#cube-b .cube__text::after { content: "B"; }
+#cube-c .cube__text::after { content: "C"; }
+#cube-d .cube__text::after { content: "D"; }
 
 @keyframes cube-selected {
   to { transform: rotateZ(-360deg); }

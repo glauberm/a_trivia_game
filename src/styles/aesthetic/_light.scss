@@ -1,12 +1,8 @@
 .light {
-  position: absolute;
-  width: $light-width;
-  height: $light-height;
-  top: -160px;
   background: #ffe762;
   background: linear-gradient(to bottom, #ffe762 0%,rgba(255,231,98,0.1) 100%);
-  clip-path: polygon(0% 100%, 40% 0%, 60% 0%, 100% 100%);
   opacity: .5;
+  clip-path: polygon(0% 100%, 40% 0%, 60% 0%, 100% 100%);
 
   &--active {
     animation-name: light-active;

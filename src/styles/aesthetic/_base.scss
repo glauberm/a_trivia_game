@@ -1,0 +1,17 @@
+body {
+  background: #afbfd2;
+  font-family: 'Boogaloo', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  // color: lighten(#afbfd2, 25%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Boogaloo';
+  src: url('./fonts/boogaloo-regular-webfont.woff2') format('woff2'),
+       url('./fonts/boogaloo-regular-webfont.woff') format('woff');
+}

@@ -1,19 +1,36 @@
 .result {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  text-align: center;
-  padding: 1em;
-
   &__inner {
-    width: 90%;
+    text-align: center;
+    padding: 1em;
+
+    &--active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation-name: result-inner-active;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-delay: 1.9s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &__core {
+    &--active {
+      opacity: 0;
+      transform: scale(2) rotate(0deg);
+      animation-name: result-core-active;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-delay: 1.9s;
+      animation-fill-mode: forwards;
+    }
   }
 
   &__status {
-    margin-top: 0;
     font-size: 2em;
     font-weight: normal;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
@@ -29,23 +46,19 @@
 
   &__question {
     line-height: 1;
+    color: #FFF;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    font-weight: normal;
   }
 
   &__correct {
     line-height: 1;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+    color: #FFF;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    font-weight: normal;
   }
 
   &__button {
-    margin: 1em auto 0;
-    height: 4em;
-    width: 4em;
-    border-radius: 5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 50%;
     transition: box-shadow 0.2s ease;
 
     &:active {
@@ -90,19 +103,15 @@
     }
   }
 
-  &__destroy {
+  &__reboot {
     background: transparent;
-    position: relative;
-    top: -0.1em;
     border: 0 none;
     font-size: 1.25em;
     line-height: 0.75;
-    transform-style: preserve-3d;
+    padding: 0.25em;
     cursor: pointer;
     transition: transform 0.2s ease;
-    height: 100%;
-    width: 100%;
-    padding: 0.25em;
+    transform-style: preserve-3d;
 
     &:active {
       outline: 0;
@@ -146,41 +155,15 @@
       rgba(#3f2832, 1) 100%
     );
   }
-
-  &--active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation-name: result-active;
-    animation-duration: 0.4s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: 1;
-    animation-delay: 1.9s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-    
-    .result__inner {
-      animation-name: result-inner-active;
-      animation-duration: 0.2s;
-      animation-timing-function: ease-out;
-      animation-iteration-count: 1;
-      animation-delay: 1.9s;
-      animation-fill-mode: forwards;
-      transform: scale(2) rotate(0deg);
-      opacity: 0;
-    }
-  }
-}
-
-@keyframes result-active {
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes result-inner-active {
+  to { opacity: 1; }
+}
+
+@keyframes result-core-active {
   to {
-    transform: scale(1) rotate(-5deg);
     opacity: 1;
+    transform: scale(1) rotate(-5deg);
   }
 }

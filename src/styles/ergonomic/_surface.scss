@@ -1,0 +1,24 @@
+.surface {
+  position: absolute;
+  bottom: 160px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateX(80deg);
+  transform-style: preserve-3d;
+
+  &__inner {
+    position: absolute;
+    width: 280px;
+    transform-style: preserve-3d;
+  }
+
+  &__core {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    transform-style: preserve-3d;
+  }
+}

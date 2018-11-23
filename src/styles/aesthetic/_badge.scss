@@ -1,16 +1,10 @@
 .badge {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-
   &__top {
     border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 24px;
-    transform: translateZ(5px);
-    z-index: 2;
 
     &--correct {
       background-image: url("./images/correct.svg");
@@ -24,9 +18,8 @@
   }
 
   &__bottom {
-    transform: translateZ(0);
-    z-index: 1;
-
+    border-radius: 50%;
+    
     &--correct {
       border: 1px solid #327345;
       background-color: #327345;

@@ -2,19 +2,40 @@ import { shuffleArray } from '../services/Utils';
 import Badge from './Badge';
 
 class Panel {
-  buildTitle(question) {
-    document.getElementById('question').innerHTML = question;
+  constructor(question, correctAnswer, incorrectAnswers) {
+    this.panel = document.getElementById('panel');
+    this.panelInner = document.getElementById('panel-inner');
+    this.panelQuestion = document.getElementById('panel-question');
+    this.panelQuestion.innerHTML = question;
+
+    this.setAlternatives(correctAnswer, incorrectAnswers);
   }
 
-  buildAlternatives(correctAnswer, incorrectAnswers) {
-    const alternatives = document.getElementsByClassName('panel__button');
+  action() {
+    this.panelInner.classList.add('panel__inner--active');
+  }
+
+  cut() {
+    this.panelInner.classList.remove('panel__inner--active');
+    this.panelQuestion.innerHTML = 'Loading...';
+  }
+
+  cutButton(button) {
+    button.removeAttribute('status');
+    button.innerHTML = 'Loading...';
+  }
+
+  getButtons() {
+    return document.getElementsByClassName('panel__button');
+  }
+
+  setAlternatives(correctAnswer, incorrectAnswers) {
     const alternativesArray = this
       .buildAlternativesArray(correctAnswer, incorrectAnswers);
 
-    for (let i = 0; i < alternatives.length; i++) {
-      alternatives[i].innerHTML = alternativesArray[i].alternative;
-      alternatives[i].setAttribute('status', alternativesArray[i].status);
-      // console.log(alternativesArray[i]);
+    for (let i = 0; i < this.getButtons().length; i++) {
+      this.getButtons()[i].innerHTML = alternativesArray[i].alternative;
+      this.getButtons()[i].setAttribute('status', alternativesArray[i].status);
     }
 
     const badge = new Badge();

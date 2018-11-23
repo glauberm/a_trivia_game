@@ -1,0 +1,14 @@
+.wall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+
+  &__title {
+    margin-bottom: 0.2em;
+  }
+
+  &__subtitle {
+    margin-top: 0.2em;
+  }
+}

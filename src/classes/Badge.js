@@ -20,6 +20,14 @@ class Badge {
       }
     }
   }
+
+  action(element) {
+    element.classList.add('badge--selected');
+  }
+
+  cut(element) {
+    element.classList.remove('badge--selected');
+  }
 }
 
 export default Badge;
