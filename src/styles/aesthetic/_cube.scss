@@ -17,9 +17,6 @@
   }
 
   &__core {
-    width: 50px;
-    height: 50px;
-
     &--selected {
       animation-name: cube-reveal;
       animation-duration: 1s;
@@ -27,24 +24,32 @@
       animation-iteration-count: 1;
       animation-delay: 0.8s;
       animation-fill-mode: forwards;
+
+      @media (min-width: $vwMedium) {
+        animation-name: cube-reveal-medium;
+      }
+    
+      @media (min-width: $vwLarge) {
+        animation-name: cube-reveal-large;
+      }
     }
   }
 
   &__face {
     background-color: $beige400;
-    border: 5px solid $beige400;
-    font-size: 1.5em;
+    border: 0.25em solid $beige400;
+    font-size: 1.35em;
     line-height: 1;
     color: $beige900;
     text-shadow: 0 1px 1px $beige200;
-    box-shadow: 0 0 0 2.5px $beige500 inset;
+    box-shadow: 0 0 0 0.1em $beige500 inset;
 
     &--top {
       background-color: $beige200;
-      border: 5px solid $beige200;
+      border: 0.25em solid $beige200;
       color: $beige700;
       text-shadow: none;
-      box-shadow: 0 0 0 2.5px $beige400 inset;
+      box-shadow: 0 0 0 0.1em $beige400 inset;
     }
 
     &--bottom,
@@ -56,7 +61,15 @@
 
     &--shadow {
       opacity: .25;
-      box-shadow: 0 0 2.5px 2.5px $beige700;
+      box-shadow: 0 0 0.1em 0.1em $beige700;
+    }
+
+    @media (min-width: $vwMedium) {
+      font-size: 1.5em;
+    }
+
+    @media (min-width: $vwLarge) {
+      font-size: 1.8em;
     }
   }
 
@@ -67,6 +80,14 @@
     animation-iteration-count: 1;
     animation-delay: 0.8s;
     animation-fill-mode: forwards;
+
+    @media (min-width: $vwMedium) {
+      animation-name: cube-reveal-shadow-medium;
+    }
+  
+    @media (min-width: $vwLarge) {
+      animation-name: cube-reveal-shadow-large;
+    }
   }
 }
 
@@ -75,22 +96,44 @@
 #cube-c .cube__text::after { content: "C"; }
 #cube-d .cube__text::after { content: "D"; }
 
-@keyframes cube-selected {
-  to { transform: rotateZ(-360deg); }
-}
-
 @keyframes cube-rotate {
   0% { transform: rotateZ(0deg); }
   100% { transform: rotateZ(360deg); }
 }
 
+@keyframes cube-selected {
+  to { transform: rotateZ(-360deg); }
+}
+
 @keyframes cube-reveal {
-  to { transform: translateZ(200px) rotateZ(-45deg); }
+  to { transform: translateZ($cubeRevealTranslateZ) rotateZ(-45deg); }
+}
+
+@keyframes cube-reveal-medium {
+  to { transform: translateZ($cubeRevealTranslateZMedium) rotateZ(-45deg); }
+}
+
+@keyframes cube-reveal-large {
+  to { transform: translateZ($cubeRevealTranslateZLarge) rotateZ(-45deg); }
 }
 
 @keyframes cube-reveal-shadow {
   to {
-    transform: rotateY(180deg) translateZ(200px) scale(1.35);
+    transform: translateZ(-$cubeRevealTranslateZ) rotateY(180deg) scale($cubeRevealShadowScale);
+    opacity: .5;
+  }
+}
+
+@keyframes cube-reveal-shadow-medium {
+  to {
+    transform: translateZ(-$cubeRevealTranslateZMedium) rotateY(180deg) scale($cubeRevealShadowScaleMedium);
+    opacity: .5;
+  }
+}
+
+@keyframes cube-reveal-shadow-large {
+  to {
+    transform: translateZ(-$cubeRevealTranslateZLarge) rotateY(180deg) scale($cubeRevealShadowScaleLarge);
     opacity: .5;
   }
 }

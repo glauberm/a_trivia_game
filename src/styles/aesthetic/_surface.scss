@@ -17,6 +17,14 @@
       animation-timing-function: ease;
       animation-delay: 0.2s;
       animation-fill-mode: forwards;
+
+      @media (min-width: $vwMedium) {
+        animation-name: surface-selected-medium;
+      }
+
+      @media (min-width: $vwLarge) {
+        animation-name: surface-selected-large;
+      }
     }
   }
 
@@ -46,5 +54,13 @@
 }
 
 @keyframes surface-selected {
-  to { transform: translateX(-110px) translateZ(-25px); }
+  to { transform: translateX($surfaceSelectedTranslateX) translateZ(-$cubeSize / 2); }
+}
+
+@keyframes surface-selected-medium {
+  to { transform: translateX($surfaceSelectedTranslateXMedium) translateZ(-$cubeSizeMedium / 2); }
+}
+
+@keyframes surface-selected-large {
+  to { transform: translateX($surfaceSelectedTranslateXLarge) translateZ(-$cubeSizeLarge / 2); }
 }

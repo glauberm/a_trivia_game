@@ -4,7 +4,7 @@
   &__title,
   &__subtitle {
     font-weight: normal;
-    color: $babyBlueDark;
+    color: lighten($babyBlueDark, 2.5%);
     line-height: 1;
     text-shadow: 0 2px 1px rgba(255, 255, 255, .25);
   }

@@ -1,6 +1,6 @@
 .surface {
   position: absolute;
-  bottom: 185px;
+  bottom: $surfaceBottom;
   width: 100%;
   display: flex;
   align-items: center;
@@ -10,13 +10,31 @@
 
   &__inner {
     position: absolute;
-    width: 280px;
+    width: $surfaceWidth;
+    display: flex;
+    justify-content: flex-end;
     transform-style: preserve-3d;
+
+    @media (min-width: $vwMedium) {
+      width: $surfaceWidthMedium;
+    }
+
+    @media (min-width: $vwLarge) {
+      width: $surfaceWidthLarge;
+    }
   }
 
   &__core {
     display: flex;
     justify-content: flex-end;
     transform-style: preserve-3d;
+  }
+
+  @media (min-width: $vwMedium) {
+    bottom: $surfaceBottomMedium;
+  }
+
+  @media (min-width: $vwLarge) {
+    bottom: $surfaceBottomLarge;
   }
 }

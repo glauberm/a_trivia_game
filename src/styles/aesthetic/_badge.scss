@@ -4,8 +4,8 @@
     border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 24px;
-    transform: translateZ(4px);
+    background-size: $badgeSize * 0.8;
+    transform: translateZ(0.4em);
 
     &--correct {
       background-image: url("./images/correct.svg");
@@ -15,6 +15,14 @@
     &--incorrect {
       background-image: url("./images/incorrect.svg");
       background-color: $redLight;
+    }
+
+    @media (min-width: $vwMedium) {
+      background-size: $badgeSizeMedium * 0.7;
+    }
+
+    @media (min-width: $vwLarge) {
+      background-size: $badgeSizeLarge * 0.65;
     }
   }
 
@@ -41,6 +49,6 @@
 }
 
 @keyframes badge-rotate {
-  0% { transform: translateZ(4px) rotateZ(0deg); }
-  100% { transform: translateZ(4px) rotateZ(360deg); }
+  0% { transform: translateZ(0.333em) rotateZ(0deg); }
+  100% { transform: translateZ(0.333em) rotateZ(360deg); }
 }

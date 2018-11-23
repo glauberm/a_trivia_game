@@ -1,6 +1,9 @@
 .spotlight {
+  box-shadow: 0 0 0.5em 0.1em $yellow;
+  border-radius: $spotlightSize;
+
   &__inner {
-    border-radius: 50%;
+    border-radius: $spotlightSize;
     background-color: $yellow;
     animation-name: spotlight-rotate;
     animation-duration: 4s;
@@ -10,8 +13,16 @@
     &::after {
       content: "?";
       color: $yellowDark;
-      font-size: 165px;
+      font-size: $spotlightSize * 0.5;
       line-height: 1;
+
+      @media (min-width: $vwMedium) {
+        font-size: $spotlightSize * 0.75;
+      }
+
+      @media (min-width: $vwLarge) {
+        font-size: $spotlightSize * 1.25;
+      }
     }
   }
 

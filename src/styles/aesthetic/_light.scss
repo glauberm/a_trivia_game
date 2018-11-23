@@ -2,7 +2,7 @@
   background: $yellowLight;
   background: linear-gradient(to bottom, $yellowLight 0%,rgba($yellowLight ,0.1) 100%);
   opacity: .5;
-  clip-path: polygon(0% 100%, 40% 0%, 60% 0%, 100% 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 50% 0%, 100% 100%);
 
   &--active {
     animation-name: light-active;

@@ -10,5 +10,17 @@ body {
   position: relative;
   height: 100vh;
 }
+
+body {
+  font-size: $baseFontSize;
+
+  @media (min-width: $vwMedium) {
+    font-size: $baseFontSizeMedium;
+  }
+
+  @media (min-width: $vwLarge) {
+    font-size: $baseFontSizeLarge;
+  }
+}
   
   

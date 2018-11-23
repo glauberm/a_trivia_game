@@ -1,6 +1,14 @@
 .light {
   position: absolute;
-  width: 320px;
+  width: 100%;
   height: 100%;
-  top: -165px;
+  top: $lightTop;
+
+  @media (min-width: $vwMedium) {
+    top: $lightTopMedium;
+  }
+
+  @media (min-width: $vwLarge) {
+    top: $lightTopLarge;
+  }
 }

@@ -1,0 +1,55 @@
+$vwMedium: 800px;
+$vhMedium: 600px;
+$vwLarge: 1400px;
+$vhLarge: 800px;
+
+$baseFontSize: 16px;
+$baseFontSizeMedium: 18px;
+$baseFontSizeLarge: 24px;
+
+$sceneWidth: 320px;
+$sceneWidthMedium: 450px;
+$sceneWidthLarge: 800px;
+$sceneHeight: 82.5vh;
+$sceneMinHeight: 420px;
+$sceneHeightMedium: 86vh;
+$sceneMinHeightMedium: 500px;
+$sceneHeightLarge: 87.5vh;
+$sceneMinHeightLarge: 720px;
+$sceneHeightMax: 105vh;
+
+$lightTop: -165px;
+$lightTopMedium: -225px;
+$lightTopLarge: -400px;
+
+$spotlightSize: $sceneWidth;
+$spotlightSizeMedium: $sceneWidthMedium;
+$spotlightSizeLarge: $sceneWidthLarge;
+
+$surfaceWidth: 280px;
+$surfaceWidthMedium: 380px;
+$surfaceWidthLarge: 660px;
+$surfaceBottom: 185px;
+$surfaceBottomMedium: 255px;
+$surfaceBottomLarge: 445px;
+$surfaceSelectedTranslateX: -110px;
+$surfaceSelectedTranslateXMedium: -160px;
+$surfaceSelectedTranslateXLarge: -280px;
+
+$cubeSize: 50px;
+$cubeSizeMedium: 60px;
+$cubeSizeLarge: 100px;
+$cubeRevealTranslateZ: 200px;
+$cubeRevealTranslateZMedium: 250px;
+$cubeRevealTranslateZLarge: 400px;
+$cubeRevealShadowScale: 1.35;
+$cubeRevealShadowScaleMedium: 1.5;
+$cubeRevealShadowScaleLarge: 1.65;
+
+$badgeSize: 30px;
+$badgeSizeMedium: 40px;
+$badgeSizeLarge: 70px;
+
+$panelWidth: $sceneWidth;
+$panelWidthMedium: $sceneWidthMedium;
+$panelWidthLarge: $sceneWidthLarge;

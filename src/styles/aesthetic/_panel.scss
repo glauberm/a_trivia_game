@@ -81,11 +81,11 @@
     &:hover,
     &:focus {
       outline: 0;
-      transform: translateX(25%);
+      transform: translateX(1em);
     }
   
     &:active {
-      transform: translateX(35%);
+      transform: translateX(1.5em);
     }
   }
 }
@@ -97,6 +97,6 @@
 
 @keyframes panel-active {
   to {
-    transform: translateY(75px) rotateX(35deg);
+    transform: translateY(6em) rotateX(35deg);
   }
 }

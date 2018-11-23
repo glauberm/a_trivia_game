@@ -1,8 +1,8 @@
 .spotlight {
   position: absolute;
   bottom: 0;
-  width: 320px;
-  height: 320px;
+  width: $spotlightSize;
+  height: $spotlightSize;
   transform: rotateX(80deg) rotateZ(-30deg);
   transform-style: preserve-3d;
 
@@ -14,5 +14,15 @@
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
+  }
+
+  @media (min-width: $vwMedium) {
+    width: $spotlightSizeMedium;
+    height: $spotlightSizeMedium;
+  }
+
+  @media (min-width: $vwLarge) {
+    width: $spotlightSizeLarge;
+    height: $spotlightSizeLarge;
   }
 }

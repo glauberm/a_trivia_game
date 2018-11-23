@@ -5,8 +5,16 @@
   bottom: 0;
 
   &__inner {
-    max-width: 320px;
+    max-width: $panelWidth;
     margin: 0 auto;
+
+    @media (min-width: $vwMedium) {
+      max-width: $panelWidthMedium;
+    }
+
+    @media (min-width: $vwLarge) {
+      max-width: $panelWidthLarge;
+    }
   }
 
   &__question {
@@ -20,6 +28,13 @@
     grid-column-gap: 0.25em;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 0.3em;
+
+    @media (min-width: $vwLarge) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-column-gap: 0.25em;
+      grid-template-rows: none;
+      grid-row-gap: 0;
+    }
   }
 
   &__button {
