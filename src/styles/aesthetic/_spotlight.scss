@@ -1,9 +1,9 @@
 .spotlight {
   box-shadow: 0 0 0.5em 0.1em $yellow;
-  border-radius: $spotlightSize;
+  border-radius: 50%;
 
   &__inner {
-    border-radius: $spotlightSize;
+    border-radius: 50%;
     background-color: $yellow;
     animation-name: spotlight-rotate;
     animation-duration: 4s;

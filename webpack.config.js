@@ -1,8 +1,10 @@
 const path = require('path');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const dirname = path.resolve(path.dirname(''));
+const postcssPresetEnv = require('postcss-preset-env');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   'mode': 'development',
@@ -11,11 +13,11 @@ module.exports = {
     './src/index.js'
   ],
   'output': {
-    'path': path.resolve(__dirname, 'build'),
+    'path': path.resolve(dirname, 'build'),
     'filename': '[name].[chunkhash:8].js',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'build')
+    contentBase: path.resolve(dirname, 'build')
   },
   'module': {
     'rules': [
@@ -40,16 +42,18 @@ module.exports = {
       {
         'test': /\.(css|scss)$/,
         'use': [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
+          'style-loader',
           {
-            'loader': 'postcss-loader',
-            'options': {
-              'ident': 'postcss',
-              'plugins': (loader) => [
+            loader: 'css-loader', options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader', options: {
+              ident: 'postcss',
+              plugins: (loader) => [
                 require('postcss-import')({ root: loader.resourcePath }),
-                require('postcss-cssnext')(),
-                require('autoprefixer')(),
+                postcssPresetEnv(),
                 require('cssnano')()
               ]
             }
@@ -80,14 +84,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      minify: true
+      inject: 'head',
+      minify: {
+        collapseWhitespace: true
+      },
     }),
-    new BrowserSyncPlugin(
-      {
-        host: 'localhost',
-        port: 3000,
-        proxy: 'http://localhost:8080/'
-      }
-    )
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      proxy: 'http://localhost:8080/'
+    })
   ]
 };
