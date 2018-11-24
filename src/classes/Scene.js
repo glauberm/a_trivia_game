@@ -18,10 +18,29 @@ class Scene {
     this.cube = new Cube();
     this.wall = new Wall();
     this.light = new Light();
-    this.timer = new Timer();
     this.spotlight = new Spotlight();
     this.shadow = new Shadow();
     this.result = new Result();
+
+    this.timer = new Timer();
+    this.timer.build(this.result, question, correctAnswer);
+    this.timeout = this.timer.getTimeout();
+  }
+
+  destroy() {
+    for (let i = 0; i < this.panelButtons.length; i++) {
+      this.panel.cutButton(this.panelButtons[i]);
+    }
+
+    this.cut();
+    this.wall.cut();
+    this.timer.cut();
+    this.light.cut();
+    this.spotlight.cut();
+    this.cube.cut();
+    this.panel.cut();
+    this.shadow.cut();
+    this.result.cut();
   }
 
   handleClick() {
@@ -42,27 +61,13 @@ class Scene {
         e.target.getAttribute('status'),
         this.question,
         this.correctAnswer);
+
+      clearTimeout(this.timeout);
     };
 
     for (let i = 0; i < this.panelButtons.length; i++) {
       this.panelButtons[i].addEventListener('click', handleSelect);
     } 
-  }
-
-  destroy() {
-    for (let i = 0; i < this.panelButtons.length; i++) {
-      this.panel.cutButton(this.panelButtons[i]);
-    }
-
-    this.cut();
-    this.wall.cut();
-    this.timer.cut();
-    this.light.cut();
-    this.spotlight.cut();
-    this.cube.cut();
-    this.panel.cut();
-    this.shadow.cut();
-    this.result.cut();
   }
 
   action() {

@@ -1,14 +1,19 @@
 .light {
   position: absolute;
-  width: 100%;
+  width: $lightWidth;
+  left: $lightLeft;
   height: 100%;
   top: $lightTop;
 
   @media (min-width: $vwMedium) {
+    width: $lightWidthMedium;
+    left: $lightLeftMedium;
     top: $lightTopMedium;
   }
 
   @media (min-width: $vwLarge) {
+    width: $lightWidthLarge;
+    left: $lightLeftLarge;
     top: $lightTopLarge;
   }
 }

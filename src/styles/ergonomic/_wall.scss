@@ -1,8 +1,6 @@
 .wall {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
 
   &__title {
     margin-top: 0.75em;

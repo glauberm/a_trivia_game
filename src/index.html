@@ -12,23 +12,24 @@
 
 <body>
 
-  <header class="scene">
-
-    <div class="scene__inner" id="scene">
-
-      <div class="wall" id="wall">
-        <div class="wall__inner">
-          <h1 class="wall__title">A Trivia Game</h1>
-          <p class="wall__subtitle">by Glauber Mota</p>
-          <div class="timer">
-              <div class="timer__wrapper" id="timer">
-                <div class="timer__inner">
-                  <div class="timer__core"></div>
-                </div>
-              </div>
+  <header class="wall" id="wall">
+    <div class="wall__inner">
+      <h1 class="wall__title">A Trivia Game</h1>
+      <p class="wall__subtitle">by Glauber Mota</p>
+      <div class="timer">
+        <div class="timer__wrapper" id="timer">
+          <div class="timer__back" id="timer-back"></div>
+          <div class="timer__inner">
+            <div class="timer__core" id="timer-core"></div>
           </div>
         </div>
       </div>
+    </div>
+  </header>
+
+  <div class="scene">
+
+    <div class="scene__inner" id="scene">
 
       <div class="light" id="light"></div>
 
@@ -130,7 +131,7 @@
 
     </div>
       
-  </header>
+  </div>
 
   <main class="panel" id="panel">
 

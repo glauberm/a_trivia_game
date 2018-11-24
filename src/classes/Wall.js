@@ -1,10 +1,14 @@
 class Wall {
+  constructor() {
+    this.wall = document.getElementById('wall');
+  }
+  
   action() {
-    document.getElementById('wall').classList.add('wall--active');
+    this.wall.classList.add('wall--active');
   }
 
   cut() {
-    document.getElementById('wall').classList.remove('wall--active');
+    this.wall.classList.remove('wall--active');
   }
 }
 

@@ -1,6 +1,6 @@
 import Scene from './classes/Scene';
 import { request } from './services/Api';
-import './main.css';
+import './index.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   let scene = new Scene();

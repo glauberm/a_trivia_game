@@ -1,16 +1,20 @@
 .scene {
   overflow: hidden;
   position: relative;
-  height: $sceneHeight;
+  height: 100vh;
+  padding-bottom: $scenePadding;
   min-height: $sceneMinHeight;
+  max-height: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  perspective: $scenePerspective;
 
   &__inner {
     position: relative;
     width: $sceneWidth;
     height: 100%;
+    top: -5px;
 
     @media (min-width: $vwMedium) {
       width: $sceneWidthMedium;
@@ -25,19 +29,21 @@
     min-height: $sceneMinHeightMedium;
   }
 
-  @media (min-height: $vhMedium) {
-    height: $sceneHeightMedium;
-  }
-
   @media (min-width: $vwLarge) {
     min-height: $sceneMinHeightLarge;
   }
 
-  @media (min-height: $vhLarge) {
-    height: $sceneHeightLarge;
+  @media (min-height: $vhMedium) {
+    padding-bottom: $scenePaddingMedium;
+    perspective: $scenePerspectiveMedium;
   }
 
-  @media (min-width: $vwLarge) and (min-height: $vhMedium) {
-    height: $sceneHeightMax;
+  @media (min-height: $vhLarge) {
+    padding-bottom: $scenePaddingLarge;
+    perspective: $scenePerspectiveLarge;
+  }
+
+  @media (min-width: $vwLarge) and (min-height: $vhLarge) {
+    padding-bottom: 0;
   }
 }

@@ -4,7 +4,7 @@
   &__title,
   &__subtitle {
     font-weight: normal;
-    color: lighten($babyBlueDark, 2.5%);
+    color: $babyBlue;
     line-height: 1;
     text-shadow: 0 2px 1px rgba(255, 255, 255, .25);
   }
@@ -21,6 +21,6 @@
 
 @keyframes wall-active {
   to {
-    transform: translateY(-4em) rotateX(35deg) scale(1.2);
+    transform: translateY(-5em) rotateX(35deg) scale(1.25);
   }
 }

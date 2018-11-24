@@ -25,11 +25,11 @@
       animation-delay: 0.8s;
       animation-fill-mode: forwards;
 
-      @media (min-width: $vwMedium) {
+      @media (min-height: $vhMedium) {
         animation-name: cube-reveal-medium;
       }
     
-      @media (min-width: $vwLarge) {
+      @media (min-height: $vhLarge) {
         animation-name: cube-reveal-large;
       }
     }
@@ -81,11 +81,11 @@
     animation-delay: 0.8s;
     animation-fill-mode: forwards;
 
-    @media (min-width: $vwMedium) {
+    @media (min-height: $vhMedium) {
       animation-name: cube-reveal-shadow-medium;
     }
   
-    @media (min-width: $vwLarge) {
+    @media (min-height: $vhLarge) {
       animation-name: cube-reveal-shadow-large;
     }
   }

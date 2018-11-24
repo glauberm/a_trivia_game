@@ -1,12 +1,16 @@
 class Surface {
+  constructor() {
+    this.surface = document.getElementById('surface');
+  }
+
   action(core) {
     core.classList.add('surface__core--selected');
-    document.getElementById('surface').classList.add('surface--active');
+    this.surface.classList.add('surface--active');
   }
 
   cut(core) {
     core.classList.remove('surface__core--selected');
-    document.getElementById('surface').classList.remove('surface--active');
+    this.surface.classList.remove('surface--active');
   }
 }
 

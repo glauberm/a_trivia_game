@@ -1,10 +1,14 @@
 class Spotlight {
+  constructor() {
+    this.spotlight = document.getElementById('spotlight');
+  }
+
   action() {
-    document.getElementById('spotlight').classList.add('spotlight--active');
+    this.spotlight.classList.add('spotlight--active');
   }
 
   cut() {
-    document.getElementById('spotlight').classList.remove('spotlight--active');
+    this.spotlight.classList.remove('spotlight--active');
   }
 }
 

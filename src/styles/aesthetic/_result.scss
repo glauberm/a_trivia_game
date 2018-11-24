@@ -1,3 +1,41 @@
+@mixin result($color) {
+  background-color: rgba($color, 0.5);
+  background: radial-gradient(
+    circle at center,
+    rgba($color, 0.75) 0%,
+    rgba($color, 1) 100%
+  );
+}
+
+@mixin result-button($color) {
+  background: $color;
+  background: linear-gradient(
+    to bottom,
+    $color 0%,
+    darken($color, 10%) 100%
+  );
+  box-shadow:
+    0 1px 1px lighten($color, 10%) inset,
+    0 2px 5px rgba(0,0,0,0.25)
+  ;
+
+  &:active {
+    box-shadow:
+      0 2px 5px rgba(0,0,0,0.25) inset,
+      0 2px 5px rgba(0,0,0,0.25)
+    ;
+  }
+}
+
+@mixin result-reboot($color) {
+  text-shadow: 0 1px 2px lighten($color, 10%);
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
+}
+
 .result {
   &__inner {
     text-align: center;
@@ -15,6 +53,10 @@
       animation-delay: 1.9s;
       animation-fill-mode: forwards;
     }
+
+    &--timeout {
+      animation-delay: 0s;
+    }
   }
 
   &__core {
@@ -27,6 +69,10 @@
       animation-iteration-count: 1;
       animation-delay: 1.9s;
       animation-fill-mode: forwards;
+    }
+
+    &--timeout {
+      animation-delay: 0s;
     }
   }
 
@@ -41,6 +87,10 @@
 
     &--incorrect {
       color: $redLight;
+    }
+
+    &--timeout {
+      color: $yellowLight;
     }
   }
 
@@ -61,45 +111,20 @@
     border-radius: 50%;
     transition: box-shadow 0.2s ease;
 
-    &:active {
-      outline: 0;
+    &:focus {
+      outline: none;
     }
 
     &--correct {
-      background: $greenLight;
-      background: linear-gradient(
-        to bottom,
-        $greenLight 0%,
-        darken($greenLight, 10%) 100%
-      );
-      box-shadow:
-        0 1px 1px lighten($greenLight, 10%) inset,
-        0 2px 5px rgba(0,0,0,0.25)
-      ;
-
-      &:active {
-        box-shadow:
-          0 2px 5px rgba(0,0,0,0.25) inset,
-          0 2px 5px rgba(0,0,0,0.25)
-        ;
-      }
+      @include result-button($greenLight);
     }
 
     &--incorrect {
-      background: $redLight;
-      background: linear-gradient(
-        to bottom,
-        $redLight 0%,
-        darken($redLight, 10%) 100%
-      );
-      box-shadow:
-        0 1px 1px lighten($redLight, 10%) inset,
-        0 2px 5px rgba(0,0,0,0.25)
-      ;
+      @include result-button($redLight);
+    }
 
-      &:active {
-        box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
-      }
+    &--timeout {
+      @include result-button($yellowDark);
     }
   }
 
@@ -111,49 +136,37 @@
     padding: 0.25em;
     cursor: pointer;
     transition: transform 0.2s ease;
-    transform-style: preserve-3d;
 
-    &:active {
-      outline: 0;
+    &:focus {
+      outline: none;
     }
 
     &--correct {
       color: darken($green, 10%);
-      text-shadow: 0 1px 2px lighten($greenLight, 10%);
-
-      &:hover,
-      &:focus {
-        transform: scale(0.9);
-      }
+      @include result-reboot($greenLight);
     }
 
     &--incorrect {
       color: darken($redLight, 30%);
-      text-shadow: 0 1px 2px lighten($redLight, 10%);
+      @include result-reboot($redLight);
+    }
 
-      &:hover,
-      &:focus {
-        transform: scale(0.9);
-      }
+    &--timeout {
+      color: darken($yellowDark, 35%);
+      @include result-reboot($yellow);
     }
   }
 
   &--correct {
-    background-color: rgba($greenDark, 0.5);
-    background: radial-gradient(
-      circle at center,
-      rgba($greenDark, 0.75) 0%,
-      rgba($greenDark, 1) 100%
-    );
+    @include result($greenDark);
   }
 
   &--incorrect {
-    background-color: rgba($redDark, 0.5);
-    background: radial-gradient(
-      circle at center,
-      rgba($redDark, 0.75) 0%,
-      rgba($redDark, 1) 100%
-    );
+    @include result($redDark);
+  }
+
+  &--timeout {
+    @include result($yellowDarkest);
   }
 }
 

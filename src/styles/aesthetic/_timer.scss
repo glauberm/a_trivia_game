@@ -4,21 +4,36 @@
     box-shadow:
       0 -2px 1px darken($redLight, 10%) inset,
       0 1px 1px rgba(255, 255, 255, .5) inset,
-      0 1px 1px 1px lighten($babyBlueDark, 17.5%)
+      0 2px 2px rgba(0, 0, 0, .35)
     ;
     padding: 5px;
     border-radius: 50%;
 
-    &::after {
+    &--running {
+      animation-name: timer-shake;
+      animation-duration: 0.75s;
+      animation-delay: 8s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: 3;
+    }
+  }
+
+  &__back {
+    &--active {
       background-color: $red;
       border-radius: 50%;
+      animation-name: timer-active;
+      animation-duration: 1s;
+      animation-delay: 0.2s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
     }
   }
 
   &__inner {
     background-color: $gray300;
     background: linear-gradient(to bottom, $gray200 0%,$gray300 100%);
-    color: lighten($babyBlueDark, 10%);
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .25) inset;
   }
@@ -26,20 +41,32 @@
   &__core {
     background-color: $redDark;
     box-shadow: 0 0 1px $redDark;
-    animation-name: timer-rotate;
-    animation-duration: 30s;
-    animation-timing-function: steps(30);
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
+
+    &--running {
+      animation-name: timer-rotate;
+      animation-duration: 10s;
+      animation-timing-function: steps(60);
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    &--paused {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes timer-shake {
+  0%, 80%, 90%, 100% {
+    transform: translateX(0);
   }
 
-  &--active::after {
-    animation-name: timer-active;
-    animation-duration: 1s;
-    animation-delay: 0.2s;
-    animation-timing-function: ease;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  10%, 30%, 50%, 70% {
+    transform: translateX(-5px);
+  }
+
+  20%, 40%, 60% {
+    transform: translateX(5px);
   }
 }
 
@@ -49,5 +76,5 @@
 }
 
 @keyframes timer-active {
-  to { transform: translateY(-4px); }
+  to { transform: translateY(-3px); }
 }

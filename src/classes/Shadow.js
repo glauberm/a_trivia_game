@@ -1,10 +1,14 @@
 class Shadow {
+  constructor() {
+    this.shadow = document.getElementById('shadow');
+  }
+
   action() {
-    document.getElementById('shadow').classList.add('shadow--active');
+    this.shadow.classList.add('shadow--active');
   }
 
   cut() {
-    document.getElementById('shadow').classList.remove('shadow--active');
+    this.shadow.classList.remove('shadow--active');
   }
 }
 

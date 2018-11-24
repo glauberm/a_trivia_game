@@ -5,7 +5,7 @@
 
 # production
 /build
-/src/main.css
+/src/index.css
 
 # misc
 .DS_Store

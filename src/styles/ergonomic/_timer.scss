@@ -9,17 +9,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      transform-style: preserve-3d;
-      z-index: -1;
-    }
+  &__back {
+    position: absolute;
+    height: calc(2.5em + 10px);
+    width: calc(2.5em + 10px);
+    z-index: -1;
   }
 
   &__inner {

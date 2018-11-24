@@ -1,10 +1,14 @@
 class Light {
+  constructor() {
+    this.light = document.getElementById('light');
+  }
+
   action() {
-    document.getElementById('light').classList.add('light--active');
+    this.light.classList.add('light--active');
   }
 
   cut() {
-    document.getElementById('light').classList.remove('light--active');
+    this.light.classList.remove('light--active');
   }
 }
 
