@@ -8,13 +8,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  perspective: $scenePerspective;
 
   &__inner {
     position: relative;
     width: $sceneWidth;
     height: 100%;
     top: -5px;
+    perspective: $scenePerspective;
 
     @media (min-width: $vwMedium) {
       width: $sceneWidthMedium;
@@ -22,6 +22,14 @@
 
     @media (min-width: $vwLarge) {
       width: $sceneWidthLarge;
+    }
+
+    @media (min-height: $vhMedium) {
+      perspective: $scenePerspectiveMedium;
+    }
+  
+    @media (min-height: $vhLarge) {
+      perspective: $scenePerspectiveLarge;
     }
   }
 
@@ -35,12 +43,10 @@
 
   @media (min-height: $vhMedium) {
     padding-bottom: $scenePaddingMedium;
-    perspective: $scenePerspectiveMedium;
   }
 
   @media (min-height: $vhLarge) {
     padding-bottom: $scenePaddingLarge;
-    perspective: $scenePerspectiveLarge;
   }
 
   @media (min-width: $vwLarge) and (min-height: $vhLarge) {
