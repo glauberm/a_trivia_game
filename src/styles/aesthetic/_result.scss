@@ -152,7 +152,7 @@
     }
 
     &--timeout {
-      color: darken($yellowDark, 35%);
+      color: darken($yellowDark, 37.5%);
       @include result-reboot($yellow);
     }
   }
