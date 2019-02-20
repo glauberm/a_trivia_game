@@ -10,6 +10,7 @@ module.exports = {
   'mode': 'development',
   'entry': [
     'babel-polyfill',
+    'whatwg-fetch',
     './src/index.js'
   ],
   'output': {

@@ -89,11 +89,11 @@
     &:hover,
     &:focus {
       outline: none;
-      transform: translateX(1em);
+      transform: translateX(0.5em);
     }
   
     &:active {
-      transform: translateX(1.5em);
+      transform: translateX(1em);
     }
   }
 }
